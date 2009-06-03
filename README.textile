@@ -9,6 +9,8 @@ IE 6, 7, 8
 Firefox 2, 3
 Safari 3, 4
 
+Example: <a href="http://www.zadams.com/dev/light-maps/sample.html">http://www.zadams.com/dev/light-maps/sample.html</a>
+
 For information on jmaps: http://code.google.com/p/jmaps/
 
 Directions:
