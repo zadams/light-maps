@@ -1,7 +1,14 @@
 /* Fast Google Maps */
-body{margin:10px; padding:0; font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif; background-color:#D8E7F1;}
+body{
+	margin:10px;
+	padding:0;
+  font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+  background-color:#D8E7F1;
+}
 
-a img{border:0;}
+a img{
+	border:0;
+}
 
 .bluerounded{
 	background-color:#A7C5DA; 
@@ -12,7 +19,9 @@ a img{border:0;}
 	-moz-border-radius-topright:6px;
 }
 
-.hide{display:none;}
+.hide{
+	visibility:hidden;;
+}
 
 .titlebar{
 	width:600px;
@@ -38,17 +47,12 @@ a img{border:0;}
 #maphelp{
 	background-color:#c6c6c6;
 	position:absolute;
-	width: 584px;
-	height:208px;
-	margin-top:-368px;
-	padding-top: 160px;
 	opacity:.85;
+	filter: alpha(opacity = 85)
 	font-size: 24pt;
 }
 
-#maphelp {
-	padding-top:80px; 
-	padding-bottom: 80px; 
-	width:584px;
+#maphelp h1{
+	padding:0px;
 	color:#333;
 }

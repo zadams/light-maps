@@ -1,0 +1,100 @@
+This is a light implementation of Google maps using the Google Maps static API, jQuery, and jMaps compliments of Zack Adams.
+
+===========
+
+The objective of this project is to decrease the up-front cost of delivering and rendering mapped content to your users.  With the current implementation you have the option to allow users' to enable a dynamic map on-demand or to render the dynamic map after the document body renders.  This example provides a simple implementation using a static maps href along with in-page JSON to populate map points on a dynamic map.
+
+Supported browsers:
+IE 6, 7, 8
+Firefox 2, 3
+Safari 3, 4
+
+For information on jmaps: http://code.google.com/p/jmaps/
+
+Directions:
+
+Include jquery, light-map.js and jquery.jmap-r72.js in your page:
+<pre>
+<script src="./scripts/jquery.js" type='text/javascript'></script>
+<script src="./scripts/light-map.js" type='text/javascript'></script>
+<script src="./scripts/jquery.jmap-r72.js" type="text/javascript"></script>
+</pre>
+
+Create a container div for your dynamic map with the id map_layer (width and height are required):
+<pre>
+<div id="map_layer" style="width:584px; height:368px;"></div>
+</pre>
+
+Generate static image url for your points and place in an image tag inside your
+map_layer div (centerpoint and zoomlevel are optional).  Give your image tag an id of mapimage:
+<pre>
+<div id="map_layer" style="width:584px; height:368px;">
+    <img src="http://maps.google.com/staticmap?center=37.4419,-122.1419&zoom=13&size=584x368&maptype=roadmap&markers=37.4419,-122.1419,red%7C37.4366,-122.1521,red%7C37.4299,-122.1256%7C37.4521,-122.1619,red%7C37.4301,-122.1691,red&sensor=false&key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSsTL4WIgxhMZ0ZK_kHjwHeQuOD4xQJpBVbSrqNn69S6DOTv203MQ5ufA" alt="map with markers" id="mapimage">
+</div>
+</pre>
+
+Generate JSON containing your markers (centerpoint and zoomlevel are optional but should be included if used above):
+<pre>
+<script type="text/javascript">
+  var mapinfo = {
+    "centerpoint": {"lat":"37.4419", "long":"-122.1419"},
+    "zoomlevel": "13",
+    "markers": [
+          {"point":{"lat": "37.4419","long": "-122.1419"}},
+          {"point":{"lat": "37.4366","long": "-122.1521"}},
+          {"point":{"lat": "37.4301","long": "-122.1691"}},
+          {"point":{"lat": "37.4299","long": "-122.1256"}},
+          {"point":{"lat": "37.4521","long": "-122.1619"}}
+      ]
+  };
+</script>
+</pre>
+
+The default behavior of light-map is to require a click event to activate the dynamic map.
+If you prefer to autoload the dynamic map after the document has rendered set the
+mapAutoload var to true:
+<pre>
+<script type='text/javascript'>
+  var mapAutoload = 'true';
+</script>
+</pre>
+
+Example:
+
+<pre>
+  
+  <html>
+  
+    <head>  
+    </head>
+    
+    <body>
+      <div id="map_layer" style="width:584px; height:368px;">
+              <img src="http://maps.google.com/staticmap?center=37.4419,-122.1419&zoom=13&size=584x368&maptype=roadmap&markers=37.4419,-122.1419,red%7C37.4366,-122.1521,red%7C37.4299,-122.1256%7C37.4521,-122.1619,red%7C37.4301,-122.1691,red&sensor=false&key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSsTL4WIgxhMZ0ZK_kHjwHeQuOD4xQJpBVbSrqNn69S6DOTv203MQ5ufA" alt="map with markers" id="mapimage">
+      </div>
+      
+      <script type="text/javascript">
+        var mapinfo = {
+          "centerpoint": {"lat":"37.4419", "long":"-122.1419"},
+          "zoomlevel": "13",
+          "markers": [
+                {"point":{"lat": "37.4419","long": "-122.1419"}},
+                {"point":{"lat": "37.4366","long": "-122.1521"}},
+                {"point":{"lat": "37.4301","long": "-122.1691"}},
+                {"point":{"lat": "37.4299","long": "-122.1256"}},
+                {"point":{"lat": "37.4521","long": "-122.1619"}}
+            ]
+        };
+      </script>
+      <script type='text/javascript'>
+        var mapAutoload = 'true';
+      </script>
+      
+      <script src="./scripts/jquery.js" type='text/javascript'></script>
+      <script src="./scripts/light-map.js" type='text/javascript'></script>
+      <script src="./scripts/jquery.jmap-r72.js" type="text/javascript"></script>
+    </body>
+    
+  </html>
+    
+</pre>
