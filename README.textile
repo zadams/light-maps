@@ -28,7 +28,9 @@ Create a container div for your dynamic map with the id map_layer (width and hei
 </pre>
 
 Generate static image url for your points and place in an image tag inside your
-map_layer div (centerpoint and zoomlevel are optional).  Give your image tag an id of mapimage:
+map_layer div (centerpoint and zoomlevel are optional).  Give your image tag an 
+id of mapimage and replace the key with your Google Maps API key:
+
 <pre>
 <div id="map_layer" style="width:584px; height:368px;">
     <img src="http://maps.google.com/staticmap?center=37.4419,-122.1419&zoom=13&size=584x368&maptype=roadmap&markers=37.4419,-122.1419,red%7C37.4366,-122.1521,red%7C37.4299,-122.1256%7C37.4521,-122.1619,red%7C37.4301,-122.1691,red&sensor=false&key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSsTL4WIgxhMZ0ZK_kHjwHeQuOD4xQJpBVbSrqNn69S6DOTv203MQ5ufA" alt="map with markers" id="mapimage">
@@ -60,6 +62,8 @@ mapAutoload var to true:
   var mapAutoload = 'true';
 </script>
 </pre>
+
+Finally replace the Google Maps API key in scripts/light-map.js on line 40
 
 Example:
 

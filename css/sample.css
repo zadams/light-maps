@@ -13,10 +13,8 @@ a img{
 .bluerounded{
 	background-color:#A7C5DA; 
 	color:#172147;
-	-moz-border-radius-bottomleft:6px;
-	-moz-border-radius-bottomright:6px;
-	-moz-border-radius-topleft:6px;
-	-moz-border-radius-topright:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius: 6px;
 }
 
 .hide{
@@ -50,6 +48,7 @@ a img{
 	opacity:.85;
 	filter: alpha(opacity = 85)
 	font-size: 24pt;
+	cursor:pointer;
 }
 
 #maphelp h1{
