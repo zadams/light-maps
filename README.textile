@@ -17,12 +17,14 @@ For information on jmaps: http://code.google.com/p/jmaps/
 Directions:
 
 Include jquery and light-map.js in your page:
+
 <pre>
 <script src="./scripts/jquery.js" type='text/javascript'></script>
 <script src="./scripts/light-map.js" type='text/javascript'></script>
 </pre>
 
 Create a container div for your dynamic map with the id map_layer (width and height are required):
+
 <pre>
 <div id="map_layer" style="width:584px; height:368px;"></div>
 </pre>
@@ -38,6 +40,7 @@ id of mapimage and replace the key with your Google Maps API key:
 </pre>
 
 Generate JSON containing your markers (centerpoint and zoomlevel are optional but should be included if used above):
+
 <pre>
 <script type="text/javascript">
   var mapinfo = {
@@ -57,6 +60,7 @@ Generate JSON containing your markers (centerpoint and zoomlevel are optional bu
 The default behavior of light-map is to require a click event to activate the dynamic map.
 If you prefer to autoload the dynamic map after the document has rendered set the
 mapAutoload var to true:
+
 <pre>
 <script type='text/javascript'>
   var mapAutoload = 'true';
