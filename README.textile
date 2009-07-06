@@ -6,20 +6,20 @@ The objective of this project is to decrease the up-front cost of delivering and
 
 Supported browsers:
 IE 6, 7, 8
-Firefox 2, 3
+Firefox 2, 3, 3.5
 Safari 3, 4
 
 Example: <a href="http://www.zadams.com/dev/light-maps/sample.html">http://www.zadams.com/dev/light-maps/sample.html</a>
+Example with jMaps: <a href="http://www.zadams.com/dev/light-maps/sample-jmaps.html">http://www.zadams.com/dev/light-maps/sample-jmaps.html</a>
 
 For information on jmaps: http://code.google.com/p/jmaps/
 
 Directions:
 
-Include jquery, light-map.js and jquery.jmap-r72.js in your page:
+Include jquery and light-map.js in your page:
 <pre>
 <script src="./scripts/jquery.js" type='text/javascript'></script>
 <script src="./scripts/light-map.js" type='text/javascript'></script>
-<script src="./scripts/jquery.jmap-r72.js" type="text/javascript"></script>
 </pre>
 
 Create a container div for your dynamic map with the id map_layer (width and height are required):
@@ -63,7 +63,7 @@ mapAutoload var to true:
 </script>
 </pre>
 
-Finally replace the Google Maps API key in scripts/light-map.js on line 40
+Finally replace the Google Maps API key in scripts/light-map.js on line 47
 
 Example:
 
@@ -98,7 +98,6 @@ Example:
       
       <script src="./scripts/jquery.js" type='text/javascript'></script>
       <script src="./scripts/light-map.js" type='text/javascript'></script>
-      <script src="./scripts/jquery.jmap-r72.js" type="text/javascript"></script>
     </body>
     
   </html>

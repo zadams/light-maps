@@ -28,19 +28,12 @@
 */
 
 function drawMap() {
-  if (GBrowserIsCompatible()) {
-    var map = new GMap2(document.getElementById("map_layer"));
-		var lat = parseFloat(mapinfo.centerpoint.lat);
-		var lng = parseFloat(mapinfo.centerpoint.long);
-    map.setCenter(new GLatLng(lat,lng), parseInt(mapinfo.zoomlevel));
-		map.addControl(new GSmallMapControl());
-		
-		$.each(mapinfo.markers,function(i,marker) {
-	      if (marker.point != "undefined") {
-					map.addOverlay(new GMarker(new GLatLng(parseFloat(marker.point.lat), parseFloat(marker.point.long))));
-	      }
-	  });
-  }
+  $('#map_layer').jmap('init', {'mapCenter':[mapinfo.centerpoint.lat,mapinfo.centerpoint.long], 'mapZoom':parseInt(mapinfo.zoomlevel)});
+  $.each(mapinfo.markers,function(i,marker) {
+      if (marker.point != "undefined") {
+        $('#map_layer').jmap('AddMarker', {'pointLatLng': [marker.point.lat,marker.point.long]});
+      }
+  });
 }
 
 function getDynamicMap() {
